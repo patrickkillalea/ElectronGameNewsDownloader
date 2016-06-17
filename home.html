@@ -26,9 +26,9 @@
             <br />
             <span>Get all the latest news for your favourite games beamed to your desktop!</span>
         </h1>
-        <img style="position: fixed; bottom: 0px; z-index: -99;" src="./images/overlay.png" width="100%">
+        <img style="position: fixed; bottom: 0px; z-index: -50;" src="./images/overlay.png" width="100%">
+        <!--  Video is muted & autoplays, placed after major DOM elements for performance & has an image fallback  -->
     </article>
-    <!--  Video is muted & autoplays, placed after major DOM elements for performance & has an image fallback  -->
     <video autoplay loop id="video-background" muted>
         <source src="./images/header-illidan.webm" type="video/mp4">
     </video>
@@ -37,6 +37,12 @@
 </html>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <style type="text/css">
+html,
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -44,8 +50,9 @@ body {
     background: #333;
     background-attachment: fixed;
     background-size: cover;
-        overflow-x: hidden;
+    overflow-x: hidden;
     overflow-y: hidden;
+    position: relative;
 }
 
 
@@ -58,15 +65,14 @@ body {
     -ms-transform: translateX(-50%) translateY(-50%);
     -o-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     min-width: 100%;
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -100;
-
+    z-index: -6;
 }
 
 
@@ -74,17 +80,18 @@ body {
 
 article {
     /*  just a fancy border  */
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     border: 10px solid rgba(255, 255, 255, 0.5);
     margin: 10px;
+    z-index: 2;
 }
 
 h1 {
-    position: absolute;
+    position: fixed;
     top: 40%;
     width: 100%;
     font-size: 36px;
@@ -92,6 +99,7 @@ h1 {
     color: #fff;
     font-family: Oswald, sans-serif;
     text-align: center;
+    z-index: 5;
 }
 
 h1 span {
@@ -100,7 +108,6 @@ h1 span {
     font-weight: 300;
     font-size: 26px;
     line-height: 24px;
-    background-color: rgba(60, 60, 60, 0.6);
 }
 
 h1 span a {
