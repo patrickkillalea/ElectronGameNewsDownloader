@@ -44,6 +44,8 @@ body {
     background: #333;
     background-attachment: fixed;
     background-size: cover;
+        overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 
@@ -51,14 +53,20 @@ body {
 
 #video-background {
     /*  making the video fullscreen  */
-    position: fixed;
-    right: 0;
-    bottom: 0;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
     min-width: 100%;
     min-height: 100%;
     width: auto;
     height: auto;
     z-index: -100;
+
 }
 
 
