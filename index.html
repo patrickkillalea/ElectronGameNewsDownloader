@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+<link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+<!--  Content  -->
+
+<body>
+    <article>
+        <h1>
+            <span>ELECTRON GAME NEWS</span>
+            <br />
+            <img src="./images/dotaicon.png" width="100px" height="100px">
+            <img src="./images/wowicon.png" width="100px" height="100px">
+            <img src="./images/csicon.png" width="100px" height="100px">
+            <img src="./images/starcrafticon.png" width="100px" height="100px">
+            <br />
+            <a class="btn btn-lg btn-success" href="WinInstaller.exe">
+            <i class="fa fa-windows fa-2x pull-left"></i> Download for Windows</a>
+            <a class="btn btn-lg btn-primary" href="MacInstaller.exe">
+            <i class="fa fa-apple fa-2x pull-left"></i> Download for Mac</a>
+            <br />
+            <span>Get all the latest news for your favourite games beamed to your desktop!</span>
+        </h1>
+    </article>
+    <!--  Video is muted & autoplays, placed after major DOM elements for performance & has an image fallback  -->
+    <video autoplay loop id="video-background" muted>
+        <source src="http://media.blizzard.com/wow/legion-6a153ad2/videos/header-illidan.webm" type="video/mp4">
+    </video>
+</body>
+
+</html>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<style type="text/css">
+body {
+    margin: 0;
+    padding: 0;
+    /*  Background fallback in case of IE8 & down, or in case video doens't load, such as with slower connections  */
+    background: #333;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+/* The only rule that matters */
+
+#video-background {
+    /*  making the video fullscreen  */
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+}
+
+
+/* These just style the content */
+
+article {
+    /*  just a fancy border  */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 10px solid rgba(255, 255, 255, 0.5);
+    margin: 10px;
+}
+
+h1 {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    font-size: 36px;
+    letter-spacing: 3px;
+    color: #fff;
+    font-family: Oswald, sans-serif;
+    text-align: center;
+}
+
+h1 span {
+    font-family: Oswald, sans-serif;
+    letter-spacing: 0;
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 24px;
+    background-color: rgba(60, 60, 60, 0.6);
+}
+
+h1 span a {
+    color: #fff;
+}
+</style>
